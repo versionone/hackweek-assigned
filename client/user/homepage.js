@@ -8,5 +8,12 @@ Template.homepage.helpers({
         var player = {};
         player["players." + Meteor.user().username] = {$exists: true};
         return Battles.findOne(player);
+    },
+    "playingGame" : function() {
+
+        var filter = {};
+        filter["players." + Meteor.user().username + '.state'] = 'playing';
+
+        return Battles.findOne(filter);
     }
 });

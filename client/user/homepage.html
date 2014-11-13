@@ -1,9 +1,13 @@
 <template name='homepage'>
     <div class='homepage'>
-        {{#if inStaging}}
-            {{> staging battle}}
+        {{#if playingGame}}
+        Gamin
         {{else}}
-            {{> stories}}
+            {{#if inStaging}}
+                {{> staging battle}}
+            {{else}}
+                {{> stories}}
+            {{/if}}
         {{/if}}
     </div>
 </template>
