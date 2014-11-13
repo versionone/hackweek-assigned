@@ -1,7 +1,14 @@
 <template name='staging'>
     <div class='staging'>
-        <h1>Waiting to battle!</h1>
+        <h1>Who's gonna work on {{name}}</h1>
 
         <button class="leave">Leave</button>
+        <button class="ready">READY!</button>
+
+        <img src="http://placehold.it/256&text={{username}}" />
+
+        {{#each others}}
+            {{> otherPlayer}}
+        {{/each}}
     </div>
 </template>
